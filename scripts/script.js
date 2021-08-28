@@ -26,7 +26,7 @@ window.onload = () => {
   video.src = videos[id].src + getFormatExtension();
   video.load();
 
-  setVideoInDom();
+  setVideoInDom(); //
   addListenerOnControlButton(); // вешаем обработчики на кнопки управления
   addListenerOnVideoButton(); // вешаем обработчики на кнопки с видео
   addListenerVideoEvent(); // вешаем слушатели на события видео
@@ -176,7 +176,7 @@ window.onload = () => {
     for (var i = 0; i < videos.length; i++) {
       var aElement = document.createElement("a");
       aElement.className = "videoSelection unSelectedVideo";
-      aElement.setAttribute("id", "video" + i);
+      aElement.setAttribute("id", `video${i}`);
       aElement.innerText = videos[i].name;
       boxVideo.append(aElement);
     }
@@ -194,15 +194,22 @@ window.onload = () => {
       Math.floor(m);
     spanTime.style.float = "right";
     document.getElementById("video" + id).append(spanTime);
-    console.log(m);
   }
 
   // отлавливание ошибок
   function errorHandler() {
     var video = document.getElementByld("video");
     if (video.error) {
-      video.poster = "./assets/image/technicaldifficulties.jpg";
+      video.poster = "./assets/images/technicaldifficulties.jpg";
       alert(video.error.code);
     }
   }
+
+  // находим прогрес бар и считываем value
+  let progress = document.getElementByld("video_progress_bar");
+  progress.addEventListener("input", function () {
+    const value = this.value;
+    this.style.border = `1px solid red`;
+    this.style.background = `linear-gradient(to right, #82CFD0 0%, #82CFD0 ${value}%, #fff ${value}%, white 100%)`;
+  });
 };
