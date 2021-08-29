@@ -236,7 +236,7 @@ function eventListener(v, vs, id) {
     },
     false
   );
-  // v.addEventListener("error", errorHandler, false);
+  v.addEventListener("error", errorHandler, false);
 }
 
 // при загрузке метаданных, выводим duration в дом
@@ -248,7 +248,6 @@ function setMetaData(v, id, vs) {
     spanTime.innerText =
       Math.floor(v.duration / 60) + ":" + (m < 10 ? "0" : "") + Math.floor(m);
     spanTime.style.float = "right";
-    console.log(document.getElementById(`video${id}`));
     document.getElementById(`video${id}`).append(spanTime);
   }
 }
@@ -261,6 +260,15 @@ function videoList(v, vs, id) {
     videoLinks[i].onclick = (e) => {
       setVideo(e, v, vs, id);
     };
+  }
+}
+
+// отлавливаем ошибки
+function errorHandler() {
+  var video = document.getElementByld("video");
+  if (video.error) {
+    video.poster = "./assets/images/technicaldifficulties.jpg";
+    alert(video.error.code);
   }
 }
 
