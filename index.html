@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/style.css" />
-    <script src="./scripts/script.js"></script>
+    <script src="./scripts/index.js"></script>
     <title>Custom-video-player</title>
   </head>
   <body>
@@ -15,7 +15,10 @@
             <div class="video_wrapper">
               <video id="video" poster="./assets/images/poster.png"></video>
             </div>
-            <div class="main_interface_button_play">
+            <div
+              class="main_interface_button_play big_play unSelected"
+              id="big_play"
+            >
               <img
                 src="./assets/images/main-button-play.png"
                 alt="button-play"
@@ -25,7 +28,7 @@
 
           <div class="section_video_controls" id="controls">
             <div class="controls_item">
-              <button class="control_button" id="previous">
+              <button class="control_button previous unSelected" id="previous">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -40,7 +43,7 @@
                 </svg>
               </button>
               <!-- class="control_button a_button control unSelected" -->
-              <button class="control_button" id="play">
+              <button class="control_button play unSelected" id="play">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -51,7 +54,7 @@
                 </svg>
               </button>
               <!-- class="control_button a_button control unSelected" -->
-              <button class="control_button" id="pause">
+              <button class="control_button pause selected" id="pause">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -61,7 +64,7 @@
                   <path fill="#ddd" d="M11 22h-4v-20h4v20zm6-20h-4v20h4v-20z" />
                 </svg>
               </button>
-              <button class="control_button" id="next">
+              <button class="control_button next unSelected" id="next">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -90,7 +93,7 @@
 
             <div class="controls_item">
               <!-- class="videoplayer_control_button a_button control unSelected" -->
-              <button class="control_button" id="mute">
+              <button class="control_button mute unSelected" id="mute">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="35"
@@ -103,8 +106,8 @@
                   />
                 </svg>
               </button>
-              <input type="range" />
-              <button class="control_button" id="fullScreen">
+              <input type="range" id="volume" />
+              <button class="control_button unSelected" id="fullScreen">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"

@@ -258,6 +258,36 @@ nav {
   transition: all 0.1s ease-out;
 }
 
+.big_play.selected {
+  display: none;
+}
+.big_play.unSelected {
+  display: block;
+}
+.play.selected {
+  display: none;
+}
+.play.unSelected {
+  display: block;
+}
+.pause.selected {
+  display: none;
+}
+.pause.unSelected {
+  display: block;
+}
+.mute.selected {
+  filter: invert(48%) sepia(0%) saturate(2%) hue-rotate(335deg) brightness(98%)
+    contrast(89%);
+}
+.mute.unSelected {
+  filter: none;
+}
+.mute.unSelected:hover {
+  filter: invert(48%) sepia(0%) saturate(2%) hue-rotate(335deg) brightness(98%)
+    contrast(89%);
+}
+
 /* ----  videoSelection  ----- */
 
 .videoSelection {
@@ -272,16 +302,17 @@ nav {
   line-height: 16px;
   text-transform: uppercase;
   padding: 5px 5px 0;
-  cursor: pointer;
 }
 .unSelectedVideo {
   color: aliceblue;
   font-weight: 500;
   background-color: black;
   transition: all 0.1s ease-out;
+  cursor: pointer;
 }
 .selectedVideo {
   color: black;
   background-color: aliceblue;
   transition: all 0.1s ease-out;
+  cursor: pointer;
 }
