@@ -49,6 +49,7 @@
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
+                  style="transform: scaleY(1.2) translateY(2px)"
                 >
                   <path fill="#ddd" d="M3 22v-20l18 10-18 10z" />
                 </svg>
@@ -60,6 +61,7 @@
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
+                  style="transform: scale(1.2) translateY(2px)"
                 >
                   <path fill="#ddd" d="M11 22h-4v-20h4v20zm6-20h-4v20h4v-20z" />
                 </svg>
@@ -79,13 +81,9 @@
               </button>
             </div>
 
-            <div class="controls_item">
+            <div class="controls_item wrap_progress_bar">
               <input
                 type="range"
-                value="40"
-                min="0"
-                max="100"
-                step="1"
                 id="video_progress_bar"
                 class="video_progress_bar"
               />
@@ -106,7 +104,7 @@
                   />
                 </svg>
               </button>
-              <input type="range" id="volume" />
+              <input type="range" id="volume_bar" class="volume_bar" />
               <button class="control_button unSelected" id="fullScreen">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -124,6 +122,14 @@
           </div>
         </div>
         <div id="videoSelection" class="videoSelection"></div>
+        <div class="searcher" id="searcher">
+          <input
+            type="text"
+            class="input_searcher"
+            id="input_searcher"
+            placeholder="введите от 3 до 20 символов"
+          />
+        </div>
       </div>
     </section>
   </body>
